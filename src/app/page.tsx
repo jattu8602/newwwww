@@ -7,6 +7,11 @@ const page = () => {
       lorem 19
       skdlfha
       aksdj
+      sldkfja;
+
+      asdkf
+      asdkfl
+      asdkjfh'
 
     </div>
   )
