@@ -4,6 +4,10 @@ const page = () => {
   return (
     <div>
       hello world
+      lorem 19
+      skdlfha
+      aksdj
+
     </div>
   )
 }
