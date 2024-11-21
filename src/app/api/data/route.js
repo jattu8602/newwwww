@@ -5,16 +5,15 @@ const uri =
 const client = new MongoClient(uri)
 
 export async function POST(req) {
-  try {
-    const body = await req.json() // Parse JSON body
-    const { temperature, humidity } = body
-
-    if (!temperature || !humidity) {
-      return new Response(
-        JSON.stringify({ error: 'Missing temperature or humidity data' }),
-        { status: 400 }
-      )
+    try {
+        const body = await req.json(); // Parse the incoming request body
+        console.log("Received POST request:", body); // Log the request body
+        return new Response(JSON.stringify({ message: "Data received successfully" }), { status: 200 });
+    } catch (error) {
+        console.error("Error processing request:", error);
+        return new Response(JSON.stringify({ error: "Internal Server Error" }), { status: 500 });
     }
+}
 
     await client.connect()
     const db = client.db('esp_database') // Replace with your database name
